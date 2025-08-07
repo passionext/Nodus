@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>System Stats Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+
+<section class="wrapper">
+    <h1>System Stats Dashboard 📊</h1>
+
+    <main class="row title cpu">
+        <ul>
+            <li>CPU Metric</li>
+            <li>Value</li>
+        </ul>
+    </main>
+    <article class="row cpu">
+        <ul>
+            <li>CPU Usage</li>
+            <li id="cpu-usage">Loading...</li>
+        </ul>
+    </article>
+
+    <main class="row title ram">
+        <ul>
+            <li>RAM Metric</li>
+            <li>Value</li>
+        </ul>
+    </main>
+    <article class="row ram">
+        <ul>
+            <li>Total Memory</li>
+            <li id="ram-total">Loading...</li>
+        </ul>
+    </article>
+    <article class="row ram">
+        <ul>
+            <li>Used Memory</li>
+            <li id="ram-used">Loading...</li>
+        </ul>
+    </article>
+    <article class="row ram">
+        <ul>
+            <li>Available Memory</li>
+            <li id="ram-available">Loading...</li>
+        </ul>
+    </article>
+
+    <main class="row title disk">
+        <ul>
+            <li>Disk Metric</li>
+            <li>Value</li>
+        </ul>
+    </main>
+    <article class="row disk">
+        <ul>
+            <li>Total Disk</li>
+            <li id="disk-total">Loading...</li>
+        </ul>
+    </article>
+    <article class="row disk">
+        <ul>
+            <li>Free Disk</li>
+            <li id="disk-free">Loading...</li>
+        </ul>
+    </article>
+    <article class="row disk">
+        <ul>
+            <li>Percentage Used</li>
+            <li id="disk-percentage">Loading...</li>
+        </ul>
+    </article>
+
+</section>
+
+<script src="{{ url_for('static', filename='stats.js') }}"></script>
+
+</body>
+</html>
