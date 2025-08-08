@@ -74,7 +74,7 @@ chmod +x stats.sh network.sh
 ```
 
 ### 5. Configure Script Paths
-In `main.py`, ensure paths to `stats.sh` and `network.sh` are correct.  
+In `main.py`, ensure paths to `stats.sh` and `network.sh` are correct. There's a _global variables_ called **SCRIPT** that points at the bash files. *Change it to rely on the path on your Linux machine.*
 Relative paths (e.g., `["bash", "network.sh"]`) are recommended if scripts are in the same directory as `main.py`.
 
 ### 6. Run the Application
