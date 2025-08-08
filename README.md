@@ -47,9 +47,6 @@ Nodus updates its dashboards automatically every **5 seconds**.
 ├── stats.js # System Stats dashboard logic
 └── network_stats.js # Network Stats dashboard logic
 
-yaml
-Copy
-Edit
 
 ---
 
@@ -64,23 +61,15 @@ Edit
 git clone https://github.com/passionext/Nodus.git
 cd Nodus
 3. Install Dependencies
-bash
-Copy
-Edit
 pip install -r requirements.txt
 4. Make Scripts Executable
-bash
-Copy
-Edit
 chmod +x stats.sh network.sh
+
 5. Configure Script Paths
 In main.py, ensure paths to stats.sh and network.sh are correct.
 Relative paths (e.g., ["bash", "network.sh"]) are recommended if scripts are in the same directory as main.py.
 
 6. Run the Application
-bash
-Copy
-Edit
 export FLASK_APP=main.py
 flask run --host=0.0.0.0 --port=5000
 The server will be available at: http://<your-server-ip>:5000
