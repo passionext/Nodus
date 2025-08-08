@@ -33,20 +33,21 @@ Nodus updates its dashboards automatically every **5 seconds**.
 
 ## 📂 Project Structure
 
+```
 .
-├── main.py # Main Flask application
-├── stats.sh # Collects system stats
-├── network.sh # Collects network stats
+├── main.py              # Main Flask application
+├── stats.sh             # Collects system stats
+├── network.sh           # Collects network stats
 │
 ├── templates/
-│ ├── dashboard.html # System Stats dashboard
-│ └── network.html # Network Stats dashboard
+│   ├── dashboard.html   # System Stats dashboard
+│   └── network.html     # Network Stats dashboard
 │
 └── static/
-├── dashboard.css # Shared stylesheet
-├── stats.js # System Stats dashboard logic
-└── network_stats.js # Network Stats dashboard logic
-
+    ├── dashboard.css      # Shared stylesheet
+    ├── stats.js           # System Stats dashboard logic
+    └── network_stats.js   # Network Stats dashboard logic
+```
 
 ---
 
@@ -60,25 +61,38 @@ Nodus updates its dashboards automatically every **5 seconds**.
 ```bash
 git clone https://github.com/passionext/Nodus.git
 cd Nodus
-3. Install Dependencies
+```
+
+### 3. Install Dependencies
+```bash
 pip install -r requirements.txt
-4. Make Scripts Executable
+```
+
+### 4. Make Scripts Executable
+```bash
 chmod +x stats.sh network.sh
+```
 
-5. Configure Script Paths
-In main.py, ensure paths to stats.sh and network.sh are correct.
-Relative paths (e.g., ["bash", "network.sh"]) are recommended if scripts are in the same directory as main.py.
+### 5. Configure Script Paths
+In `main.py`, ensure paths to `stats.sh` and `network.sh` are correct.  
+Relative paths (e.g., `["bash", "network.sh"]`) are recommended if scripts are in the same directory as `main.py`.
 
-6. Run the Application
+### 6. Run the Application
+```bash
 export FLASK_APP=main.py
 flask run --host=0.0.0.0 --port=5000
-The server will be available at: http://<your-server-ip>:5000
+```
+The server will be available at: `http://<your-server-ip>:5000`
 
-💻 Usage
-System Stats: http://<your-server-ip>:5000/dashboard
+---
 
-Network Stats: http://<your-server-ip>:5000/network-dashboard
+## 💻 Usage
 
-📜 Disclaimer
-The HTML/CSS template was adapted from a pre-existing dashboard design.
-It was customized with the help of AI to integrate the specific data and features for Nodus
+- **System Stats:** `http://<your-server-ip>:5000/dashboard`  
+- **Network Stats:** `http://<your-server-ip>:5000/network-dashboard`
+
+---
+
+## 📜 Disclaimer
+The HTML/CSS template was adapted from a pre-existing dashboard design.  
+It was customized with the help of AI to integrate the specific data and features for Nodus.
