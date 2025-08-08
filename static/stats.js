@@ -2,12 +2,7 @@
  * Fetches data from the /system API and updates the dashboard.
  */
 async function updateStats() {
-    
-    /* Update the statistics on the page. An asynchronous function is used to fetch data from the API endpoint.
-       The function handles errors gracefully and updates the UI with the fetched data or an error message.*/
-
     try {
-        // Send an HTTP GET request to the /system endpoint. This endpoint is expected to return system statistics in a JSON format
         const response = await fetch('/system');
         if (!response.ok) {
             throw new Error(`API request failed: ${response.status}`);

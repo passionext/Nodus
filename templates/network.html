@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Stats Dashboard</title>
+    <!-- Corrected path using Flask's url_for helper -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+
+<section class="wrapper">
+    <h1>Network Stats Dashboard 🌐</h1>
+
+    <!-- IP & Latency Section -->
+    <main class="row title network">
+        <ul>
+            <li>IP & Latency</li>
+            <li>Value</li>
+        </ul>
+    </main>
+    <article class="row network">
+        <ul>
+            <li>Private IP</li>
+            <li id="private-ip">Loading...</li>
+        </ul>
+    </article>
+    <article class="row network">
+        <ul>
+            <li>Public IP</li>
+            <li id="public-ip">Loading...</li>
+        </ul>
+    </article>
+     <article class="row network">
+        <ul>
+            <li>Ping Latency (8.8.8.8)</li>
+            <li id="latency">Loading...</li>
+        </ul>
+    </article>
+
+    <!-- Open Ports Section -->
+    <main class="row title ports">
+        <ul>
+            <li>Open Ports</li>
+            <li>&nbsp;</li>
+        </ul>
+    </main>
+    <article class="row ports">
+        <div id="open-ports-list-container">
+            <ul id="open-ports-list">
+                <li>Loading...</li>
+            </ul>
+        </div>
+    </article>
+
+</section>
+
+<!-- Corrected path using Flask's url_for helper -->
+<script src="{{ url_for('static', filename='network_stats.js') }}"></script>
+
+</body>
+</html>
+

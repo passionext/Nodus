@@ -3,11 +3,19 @@
 
 /* Color Variables */
 :root {
+    /* Original System Stats Colors */
     --cpu-color: rgba(79, 192, 210, 1);
     --ram-color: rgba(82, 210, 154, 1);
     --disk-color: rgba(231, 196, 104, 1);
-    --dark-bg: rgba(0, 0, 0, 0.9);
-    --light-bg: rgba(255, 255, 255, 0.1);
+    
+    /* New Network Stats Colors */
+    --network-color: rgba(150, 120, 220, 1); /* Purple for Network */
+    --ports-color: rgba(210, 82, 82, 1);   /* Red for Ports */
+    --connections-color: rgba(79, 192, 210, 1); /* Blue for Connections */
+
+    /* General Theme */
+    --dark-bg: rgba(20, 20, 30, 0.95);
+    --light-bg: rgba(255, 255, 255, 0.03);
     --text-color: rgba(255, 255, 255, 0.9);
     --border-color: #000;
 }
@@ -16,25 +24,27 @@
 body {
     background: var(--dark-bg);
     font-family: 'Open Sans', sans-serif;
+    color: var(--text-color);
 }
 
 h1 {
-    color: var(--text-color);
     text-align: center;
-    padding: 1rem;
+    padding: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 /* Wrapper for the entire content */
 .wrapper {
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
     margin: 20px auto 100px auto;
     padding: 0;
     background: var(--light-bg);
-    color: var(--text-color);
     overflow: hidden;
     position: relative;
     border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 /* List (Row) Styling */
@@ -48,7 +58,6 @@ h1 {
     font-size: 16px;
     list-style: none;
     display: inline-block;
-    /* Changed from 20% (5 columns) to 50% (2 columns) */
     width: 50%;
     padding: 12px 15px;
     box-sizing: border-box;
@@ -58,7 +67,7 @@ h1 {
 /* Row Styling */
 .row {
     padding: 10px 0;
-    font-size: 0; /* To remove whitespace between inline-block elements */
+    font-size: 0;
     position: relative;
     transition: background-color 0.2s ease-out;
     border-top: 1px solid var(--border-color);
@@ -75,8 +84,64 @@ h1 {
     background-color: rgba(0,0,0,0.2);
     border-top: none;
 }
+.title li:last-child {
+    text-align: right;
+}
 
 /* Color-coding for each stats block */
 .cpu { border-left: 4px solid var(--cpu-color); }
 .ram { border-left: 4px solid var(--ram-color); }
 .disk { border-left: 4px solid var(--disk-color); }
+.network { border-left: 4px solid var(--network-color); }
+.ports { border-left: 4px solid var(--ports-color); }
+.connections { border-left: 4px solid var(--connections-color); }
+
+
+/* Open Ports List Styling */
+#open-ports-list-container {
+    width: 100%;
+    padding: 10px 15px;
+}
+#open-ports-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+}
+#open-ports-list li {
+    display: inline-block;
+    width: auto; /* override */
+    background-color: var(--ports-color);
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Table Styling for Connections */
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* For smaller screens */
+    padding: 10px 0;
+}
+#connections-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+#connections-table th, #connections-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+#connections-table th {
+    background-color: rgba(0,0,0,0.3);
+    font-weight: 700;
+}
+#connections-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+#connections-table td {
+    word-break: break-all;
+}
